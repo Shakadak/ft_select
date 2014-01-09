@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/07 18:08:14 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/08 18:50:18 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/09 16:02:39 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ft_select.h"
 #include "libft.h"
 
-t_alst	*ft_new_alst(char	*data, t_alst *prev)
+t_alst	*ft_new_alst(char	*data, t_alst *prev, int i)
 {
 	t_alst	*new;
 
@@ -24,9 +24,15 @@ t_alst	*ft_new_alst(char	*data, t_alst *prev)
 		return (NULL);
 	new->param = data;
 	new->size = ft_strlen(data);
-/*	new->selected = 0;*/
+	new->select = 0;
+	new->i = i - 1;
+	new->prev = NULL;
+	new->next = NULL;
 	if (prev)
+	{
 		prev->next = new;
+		new->prev = prev;
+	}
 	ft_putendl("sortie new_alst");
 	return (new);
 }
