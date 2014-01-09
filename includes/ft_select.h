@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/08 17:26:05 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/09 16:10:53 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/09 16:47:52 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_SELECT_H
@@ -36,5 +36,6 @@ void	ft_mod_lst(t_alst *data);
 int		ft_get_param(t_alst **data, char **argv, int argc);
 int		ft_aff_lst(t_alst *data, t_term *e, int j);
 void	ft_aff_elem(t_alst *data, t_term *e, int cursor);
+int		ft_travel_lst(t_alst *data, t_term *e);
 int		ft_printchar(int c);
 #endif
