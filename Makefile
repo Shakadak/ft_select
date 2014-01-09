@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/01/08 16:32:33 by npineau           #+#    #+#              #
-#    Updated: 2014/01/09 16:49:42 by npineau          ###   ########.fr        #
+#    Updated: 2014/01/09 17:35:52 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,8 @@ SRC = ft_aff_lst.c \
 	  ft_printchar.c \
 	  ft_travel_lst.c \
 	  ft_aff_elem.c \
+	  key_hook.c \
+	  ft_quit.c \
 	  main.c
 
 LIB = libft

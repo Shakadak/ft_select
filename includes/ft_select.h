@@ -6,11 +6,24 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/08 17:26:05 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/09 17:09:43 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/09 18:38:35 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_SELECT_H
 # define FT_SELECT_H
+# define SPACE 32
+# define DELETE 127
+# define BKSPC 3
+# define UP 4283163
+# define DOWN 4348699
+# define RETURN 10
+# define ESC 27
+# include <termios.h>
+typedef union		u_code
+{
+	unsigned int	c;
+	char			key[4];
+}					t_code;
 
 typedef struct		s_alst
 {
@@ -36,9 +49,9 @@ void	ft_mod_lst(t_alst *data);
 int		ft_get_param(t_alst **data, char **argv, int argc);
 int		ft_aff_lst(t_alst *data, t_term *e, int j);
 void	ft_aff_elem(t_alst *data, t_term *e, int cursor);
-int		ft_travel_lst(t_alst *data, t_term *e);
+int		ft_travel_lst(t_alst *data, t_term *e, struct termios *term);
 int		ft_printchar(int c);
-int		key_hook(t_alst *data);
-void	ft_quit(t_alst *data);
+int		key_hook(t_alst *data, struct termios *term);
+void	ft_quit(t_alst *data, struct termios *term);
 void	ft_return_lst(t_alst *data);
 #endif
