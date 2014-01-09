@@ -6,18 +6,19 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/08 21:26:09 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/09 15:31:20 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/09 16:53:00 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <termcap.h>
 #include "ft_select.h"
+#include "libft.h"
 
-int	key_hook(t_alst *d, t_term *e)
+int	key_hook(t_alst *d)
 {
 	unsigned int	key;
 
-	yolo_code();
+	yolo_code(420);
 	while (1)
 	{
 		ft_bzero(key, 4);
