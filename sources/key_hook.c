@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/08 21:26:09 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/09 18:36:39 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/09 18:55:44 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	key_hook(t_alst *d, struct termios *term)
 	{
 		ft_bzero(code.key, 4);
 		read(0, code.key, 4);
-		ft_putendl(code.key);///////////////////////////////////////////
 		if (code.c == SPACE)
 		{
 			d->select = (d->select == 0 ? 1 : 0);

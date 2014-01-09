@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/09 15:14:38 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/09 18:43:05 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/09 18:54:10 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_aff_elem(t_alst *d, t_term *e, int cursor)
 	int	x;
 	int	y;
 
-	x = d->i / e->max_c;
+	x = d->i / e->h * e->max_c;
 	y = d->i % e->h;
 	tputs(tgoto(tgetstr("cm", NULL), x, y), 1, ft_printchar);
 	if (d->select == 1)
