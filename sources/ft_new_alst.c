@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/07 18:08:14 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/09 16:02:39 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/09 19:04:24 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ t_alst	*ft_new_alst(char	*data, t_alst *prev, int i)
 {
 	t_alst	*new;
 
-	ft_putendl("entree new_alst");
 	new = (t_alst *)malloc(sizeof(t_alst));
 	if (!new)
 		return (NULL);
@@ -33,6 +32,5 @@ t_alst	*ft_new_alst(char	*data, t_alst *prev, int i)
 		prev->next = new;
 		new->prev = prev;
 	}
-	ft_putendl("sortie new_alst");
 	return (new);
 }
