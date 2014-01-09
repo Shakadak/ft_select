@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/08 15:08:44 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/09 18:33:41 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/09 19:09:46 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_term(t_alst *data, int width)
 	tcsetattr(0, 0, &term);
 	edge.h = tgetnum("li");
 	edge.w = tgetnum("co");
-	edge.max_c = edge.w / width;
+	edge.max_c = width;
 	tputs(tgetstr("ti", NULL), 1, ft_printchar);
 	tputs(tgetstr("vi", NULL), 1, ft_printchar);
 	ft_aff_lst(data, &edge, 0);
