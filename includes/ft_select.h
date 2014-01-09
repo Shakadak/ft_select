@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/08 17:26:05 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/08 19:14:07 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/09 13:43:37 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_SELECT_H
@@ -16,7 +16,9 @@ typedef struct		s_alst
 {
 	char			*param;
 	int				size;
+	int				index;
 	struct s_alst	*next;
+	struct s_alst	*prev;
 }					t_alst;
 
 typedef struct	s_term
