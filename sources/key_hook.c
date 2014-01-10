@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/08 21:26:09 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/10 15:34:18 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/10 16:09:57 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	key_hook(t_alst *d, struct termios *term)
 {
 	t_code	code;
 
-/*	yolo_code(420);*/
 	while (1)
 	{
 		ft_bzero(code.key, 4);
@@ -34,8 +33,8 @@ int	key_hook(t_alst *d, struct termios *term)
 		else if (code.c == UP)
 			return (-1);
 		else if (code.c == RETURN)
-			ft_return_lst(d, term);
+			ft_quit(d, term, 1);
 		else if (code.c == ESC)
-			ft_quit(d, term);
+			ft_quit(d, term, 0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/08 17:26:05 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/10 15:29:18 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/10 16:10:45 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_SELECT_H
@@ -52,6 +52,6 @@ void	ft_aff_elem(t_alst *data, t_term *e, int cursor);
 int		ft_travel_lst(t_alst *data, t_term *e, struct termios *term);
 int		ft_printchar(int c);
 int		key_hook(t_alst *data, struct termios *term);
-void	ft_quit(t_alst *data, struct termios *term);
-void	ft_return_lst(t_alst *data, struct termios *term);
+void	ft_quit(t_alst *data, struct termios *term, int ret);
+void	ft_return_lst(t_alst *data, int spc, int begin);
 #endif

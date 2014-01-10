@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/10 15:17:16 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/10 15:40:12 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/10 16:05:30 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,16 @@
 #include <unistd.h>
 #include "ft_select.h"
 
-void	ft_return_lst(t_alst *data, struct termios *term)
+void	ft_return_lst(t_alst *data, int spc, int begin)
 {
-	int	spc;
-
-	spc = 0;
-	while (data)
+	if (data->select)
 	{
-		if (data->select)
-		{
-			if (spc)
-				write(0, " ", 1);
-			write(0, data->param, data->size);
-			spc++;
-		}
-		data->prev->next = NULL;/////////////////////////
-		if (data->next)
-		{
-			data = data->next;
-			free(data->prev);
-		}
-		else
-		{
-			free(data);
-			data = NULL;
-		}
+		if (spc)
+			write(1, " ", 1);
+		write(1, data->param, data->size);
+		spc++;
 	}
-	ft_quit(data, term);
+	if (data->next->i != begin)
+		ft_return_lst(data->next, spc, begin);
+	free (data);
 }
