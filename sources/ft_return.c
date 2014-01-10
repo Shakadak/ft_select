@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_hook.c                                         :+:      :+:    :+:   */
+/*   ft_return.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/08 21:26:09 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/10 15:34:18 by npineau          ###   ########.fr       */
+/*   Created: 2014/01/10 15:17:16 by npineau           #+#    #+#             */
+/*   Updated: 2014/01/10 15:40:12 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <termcap.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include "ft_select.h"
-#include "libft.h"
 
-int	key_hook(t_alst *d, struct termios *term)
+void	ft_return_lst(t_alst *data, struct termios *term)
 {
-	t_code	code;
+	int	spc;
 
-/*	yolo_code(420);*/
-	while (1)
+	spc = 0;
+	while (data)
 	{
-		ft_bzero(code.key, 4);
-		read(0, code.key, 4);
-		if (code.c == SPACE)
+		if (data->select)
 		{
-			d->select = (d->select == 0 ? 1 : 0);
-			return (1);
+			if (spc)
+				write(0, " ", 1);
+			write(0, data->param, data->size);
+			spc++;
 		}
-		else if (code.c == DOWN)
-			return (1);
-		else if (code.c == UP)
-			return (-1);
-		else if (code.c == RETURN)
-			ft_return_lst(d, term);
-		else if (code.c == ESC)
-			ft_quit(d, term);
+		data->prev->next = NULL;/////////////////////////
+		if (data->next)
+		{
+			data = data->next;
+			free(data->prev);
+		}
+		else
+		{
+			free(data);
+			data = NULL;
+		}
 	}
+	ft_quit(data, term);
 }
