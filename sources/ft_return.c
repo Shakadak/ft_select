@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/10 15:17:16 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/10 16:05:30 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/11 19:19:17 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	ft_return_lst(t_alst *data, int spc, int begin)
 	}
 	if (data->next->i != begin)
 		ft_return_lst(data->next, spc, begin);
-	free (data);
+	free(data);
 }

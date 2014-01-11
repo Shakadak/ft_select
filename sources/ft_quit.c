@@ -6,12 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/09 17:29:57 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/10 16:12:02 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/11 19:18:17 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <termcap.h>
-#include <termios.h>
 #include <stdlib.h>
 #include "ft_select.h"
 

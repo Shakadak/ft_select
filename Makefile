@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/01/08 16:32:33 by npineau           #+#    #+#              #
-#    Updated: 2014/01/10 15:34:39 by npineau          ###   ########.fr        #
+#    Updated: 2014/01/11 19:13:26 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,8 +56,8 @@ $(OBJDIR):
 	mkdir $(OBJDIR)
 
 clean:
-	@echo "Removing $(OBJS_PREF)."
-	@rm -f $(OBJS_PREF)
+	@echo "Removing $(OBJDIR)."
+	@rm -Rf $(OBJDIR)
 
 fclean: clean
 	@echo "Removing $(NAME)."

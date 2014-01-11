@@ -6,11 +6,10 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/09 16:22:58 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/09 18:36:14 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/11 19:21:49 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <termios.h>
 #include "ft_select.h"
 
 int	ft_travel_lst(t_alst *data, t_term *e, struct termios *term)
