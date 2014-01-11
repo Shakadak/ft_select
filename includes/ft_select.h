@@ -6,11 +6,12 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/08 17:26:05 by npineau           #+#    #+#             */
-/*   Updated: 2014/01/10 16:10:45 by npineau          ###   ########.fr       */
+/*   Updated: 2014/01/11 17:16:15 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_SELECT_H
 # define FT_SELECT_H
+
 # define SPACE 32
 # define DELETE 127
 # define BKSPC 3
@@ -19,6 +20,7 @@
 # define RETURN 10
 # define ESC 27
 # include <termios.h>
+
 typedef union		u_code
 {
 	unsigned int	c;
@@ -54,4 +56,5 @@ int		ft_printchar(int c);
 int		key_hook(t_alst *data, struct termios *term);
 void	ft_quit(t_alst *data, struct termios *term, int ret);
 void	ft_return_lst(t_alst *data, int spc, int begin);
+
 #endif
